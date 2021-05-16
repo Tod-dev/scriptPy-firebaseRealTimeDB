@@ -1,4 +1,4 @@
-import firebase_admin
+import firebase_admin #pip install firebase-admin
 from firebase_admin import credentials
 from pathlib import Path
 from firebase_admin import db
