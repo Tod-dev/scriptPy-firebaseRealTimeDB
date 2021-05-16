@@ -1,0 +1,25 @@
+{
+  "rules": {    
+    "tabellaRiassuntiva":{
+    	".read": "auth.uid !== null || auth.uid === 'node-server'", 
+    	".write": "auth.uid === 'node-server'"//ADMIN-only
+    },
+    "tabellone":{
+      ".read": "auth.uid === 'node-server'", //ADMIN-only
+    	".write": "auth.uid !== null || auth.uid === 'node-server'"
+    },
+    "lastUpdate":{
+      ".read": "auth.uid === 'node-server'", //ADMIN-only
+    	".write": "auth.uid === 'node-server'"// ADMIN-only
+    },
+    "Users":{
+      ".read": "auth.uid === 'node-server'",// ADMIN-only
+    	".write": "auth.uid === 'node-server'",// ADMIN-only
+      
+    	"$uid":{
+          ".read": "auth.uid === $uid",
+    			".write": "auth.uid === $uid"
+      }
+    }
+  }
+}
